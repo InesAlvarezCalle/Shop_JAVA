@@ -3,20 +3,26 @@ public class Libros extends Articulo{
     private String codigoAutor;
     private String isbn;
 
-    //Constructor por defecto
+    /*Constructor por defecto
     public Libros(){
         super();
         this.titulo = "";
         this.codigoAutor = "";
         this.isbn = "";
     }
+    */
 
     //Constructor general
     public Libros(String cod, double pre, int iva, int stc, String tit, String codA, String isbn){
         super(cod, pre, iva, stc);
-        this.titulo = tit;
-        this.codigoAutor = codA;
-        this.isbn = isbn;
+        if(tit != null && codA != null && isbn != null){
+            this.titulo = tit;
+            this.codigoAutor = codA;
+            this.isbn = isbn;
+            System.out.println("Constructor creado");
+        } else {
+            System.out.println("ERROR: Introduzca bien los datos");
+        }
     }
 
     //Getters y Setters

@@ -4,20 +4,26 @@ public class Articulo {
     private int iva;
     private int stock;
 
-    //Constructor por defecto
+    /*Constructor por defecto
     public Articulo(){
         this.codigo = "";
         this.precio = 0.0;
         this.iva = 0;
         this.stock = 0;
     }
+    */
 
     //Contructor general
     public Articulo(String cod, double pre, int iva, int stc){
-        this.codigo = cod;
-        this.precio = pre;
-        this.iva = iva;
-        this.stock = stc;
+        if(cod != null && pre > 0.0 && (iva == 4 || iva == 10 || iva == 21) && stc > 0){
+            this.codigo = cod;
+            this.precio = pre;
+            this.iva = iva;
+            this.stock = stc;
+            System.out.println("\nConstructor creado");
+        } else {
+            System.out.println("\nERROR: Introduzca bien los datos");
+        }
     }
 
     //getters and setters

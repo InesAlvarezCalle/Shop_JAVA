@@ -3,20 +3,26 @@ public class Mobiliario extends Articulo {
     private String codigoFabric;
     private int garantia;
 
-    //Constructor por defecto
+    /*Constructor por defecto
     public Mobiliario(){
         super();
         this.material = "";
         this.codigoFabric = "";
         this.garantia = 0;
     }
+    */
 
     //Constructor general
     public Mobiliario(String cod, double pre, int iva, int stc, String mat, String codF, int gar){
         super(cod, pre, iva, stc);
-        this.material = mat;
-        this.codigoFabric = codF;
-        this.garantia = gar;
+        if(mat != null && codF != null && gar < 0){
+           this.material = mat;
+           this.codigoFabric = codF;
+           this.garantia = gar;
+           System.out.println("Constructor creado");
+       } else {
+           System.out.println("ERROR: Introduzca bien los datos");
+       }
     }
 
     //getters and setters
