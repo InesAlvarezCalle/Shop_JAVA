@@ -13,9 +13,9 @@ public class Oficina extends Articulo{
         super(cod, pre, iva, stc);
         if(des != null){
             this.descripcion = des;
-            System.out.println("Constructor creado");
+            System.out.println("\nObjeto creado");
         } else {
-            System.out.println("ERROR: Introduzca bien los datos");
+            System.out.println("\nERROR: Introduzca bien los datos");
         }
     }
 

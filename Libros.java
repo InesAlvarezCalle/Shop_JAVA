@@ -19,9 +19,9 @@ public class Libros extends Articulo{
             this.titulo = tit;
             this.codigoAutor = codA;
             this.isbn = isbn;
-            System.out.println("Constructor creado");
+            System.out.println("\nObjeto creado");
         } else {
-            System.out.println("ERROR: Introduzca bien los datos");
+            System.out.println("\nERROR: Introduzca bien los datos");
         }
     }
 
