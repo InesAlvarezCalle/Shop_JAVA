@@ -13,7 +13,6 @@ public class Oficina extends Articulo{
         super(cod, pre, iva, stc);
         if(des != null){
             this.descripcion = des;
-            System.out.println("\nObjeto creado");
         } else {
             System.out.println("\nERROR: Introduzca bien los datos");
         }
@@ -26,5 +25,22 @@ public class Oficina extends Articulo{
 
     public void setDescripcion(String des){
         this.descripcion = des;
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("\nINFORMACIÓN DEL MATERIAL DE OFICINA:");
+        System.out.println("------------------------------------");
+        System.out.println("Código: " + getCodigo());
+        System.out.println("Precio: " + getPrecio());
+        System.out.println("IVA: " + getIva());
+        System.out.println("Stock: " + getStock());
+        System.out.println("Descripción: " + this.descripcion);
+    }
+
+    @Override
+    public String toString() {
+        return "\nInformación del artículo:\nCódigo: " + getCodigo() + "\nPrecio: " + getPrecio() + "\nIVA: "
+                + getIva() + "\nStock: " + getStock() + "\nDescripción: " + this.descripcion;
     }
 }

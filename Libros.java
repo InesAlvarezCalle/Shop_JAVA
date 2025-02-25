@@ -19,7 +19,6 @@ public class Libros extends Articulo{
             this.titulo = tit;
             this.codigoAutor = codA;
             this.isbn = isbn;
-            System.out.println("\nObjeto creado");
         } else {
             System.out.println("\nERROR: Introduzca bien los datos");
         }
@@ -48,5 +47,25 @@ public class Libros extends Articulo{
 
     public void setIsbn(String isbn){
         this.isbn = isbn;
+    }
+
+    @Override
+    public void imprimir(){
+        System.out.println("\nINFORMACIÓN DEL LIBRO:");
+        System.out.println("------------------------------------");
+        System.out.println("Código: " + getCodigo());
+        System.out.println("Precio: " + getPrecio());
+        System.out.println("IVA: " + getIva());
+        System.out.println("Stock: " + getStock());
+        System.out.println("Titulo: " + this.titulo);
+        System.out.println("Código autor: " + this.codigoAutor);
+        System.out.println("ISBN: " + this.isbn);
+    }
+
+    @Override
+    public String toString(){
+        return "\nInformación del artículo:\nCódigo: " + getCodigo() + "\nPrecio: " + getPrecio() + "\nIVA: "
+                + getIva() + "\nStock: " + getStock() + "\nTítulo: " + this.titulo + "\nCódigo autor: " +
+                this.codigoAutor + "\nISBN: " + this.isbn;
     }
 }

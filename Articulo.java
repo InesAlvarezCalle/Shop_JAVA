@@ -22,7 +22,6 @@ public class Articulo {
             this.precio = pre;
             this.iva = iva;
             this.stock = stc;
-            System.out.println("\nObjeto creado");
         } else {
             System.out.println("\nERROR: Introduzca bien los datos");
         }
@@ -62,8 +61,8 @@ public class Articulo {
     }
 
     public void imprimir(){
-        System.out.println("INFORMACIÓN DEL ARTÍCULO:");
-        System.out.println("----------------------------------");
+        System.out.println("\nINFORMACIÓN DEL ARTÍCULO:");
+        System.out.println("------------------------------------");
         System.out.println("Código: " + this.codigo);
         System.out.println("Precio: " + this.precio);
         System.out.println("IVA: " + this.iva);
@@ -78,21 +77,26 @@ public class Articulo {
         return (this.precio / (1 + descuento / 100));
     }
 
-    public void vender(int ventas){
+    public boolean vender(int ventas){
         if(ventas > this.stock){
-            System.out.println("False");
+            return false;
         } else {
             this.stock = this.stock - ventas;
-            System.out.println("True");
+            return true;
         }
     }
 
-    public void almacenar(int almacen){
+    public boolean almacenar(int almacen){
         if(almacen < 0){
-            System.out.println("False");
+            return false;
         } else {
             this.stock = this.stock + almacen;
-            System.out.println("True");
+            return true;
         }
+    }
+
+    public String toString(){
+        return "\nInformación del artículo:\nCódigo: " + this.codigo + "\nPrecio: " + this.precio + "\nIVA: "
+                + this.iva + "\nStock: " + this.stock;
     }
 }

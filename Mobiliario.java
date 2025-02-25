@@ -15,11 +15,10 @@ public class Mobiliario extends Articulo {
     //Constructor general
     public Mobiliario(String cod, double pre, int iva, int stc, String mat, String codF, int gar){
         super(cod, pre, iva, stc);
-        if(mat != null && codF != null && gar < 0){
+        if(mat != null && codF != null && gar > 0){
            this.material = mat;
            this.codigoFabric = codF;
            this.garantia = gar;
-           System.out.println("\nObjeto creado");
        } else {
            System.out.println("\nERROR: Introduzca bien los datos");
        }
@@ -49,5 +48,25 @@ public class Mobiliario extends Articulo {
 
     public void setGarantia(int gar){
         this.garantia = gar;
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println("\nINFORMACIÓN DEL MOBILIARIO:");
+        System.out.println("------------------------------------");
+        System.out.println("Código: " + getCodigo());
+        System.out.println("Precio: " + getPrecio());
+        System.out.println("IVA: " + getIva());
+        System.out.println("Stock: " + getStock());
+        System.out.println("Material: " + this.material);
+        System.out.println("Código fabricante: " + this.codigoFabric);
+        System.out.println("Garantía: " + this.garantia);
+    }
+
+    @Override
+    public String toString(){
+        return "\nInformación del artículo:\nCódigo: " + getCodigo() + "\nPrecio: " + getPrecio() + "\nIVA: "
+                + getIva() + "\nStock: " + getStock() + "\nMaterial: " + this.material + "\nCódigo fabricante: "
+                + this.codigoFabric + "\nGarantía: " + this.garantia;
     }
 }
